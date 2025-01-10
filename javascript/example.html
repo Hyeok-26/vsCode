@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example.html</title>
+    <style>
+        #rabbit{
+            transition: margin-left 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="moveBtn">움직이기</button>
+    <button id="moveStp">다시 와</button>
+    <br>
+    <img id="rabbit" src="images/rabbit_1.png">
+
+    <script>
+        let mLeft = 0;
+        let count = 0;
+        const move=document.querySelector("#moveBtn").addEventListener("click",function(){
+            mLeft+=100;
+            count++;
+            let move = mLeft+"px";
+            document.querySelector("#rabbit").style.marginLeft=move;
+            if(count%2==1){
+                document.querySelector("#rabbit").style.transform = "scaleX(-1)";
+            }else{
+                document.querySelector("#rabbit").style.transform = "scaleX(1)";
+            }
+        });
+        const reset=document.querySelector("#moveStp").addEventListener("click",function(){
+            mLeft = 0;
+            count =0;
+            document.querySelector("#rabbit").style.transform = "scaleX(1)";
+            document.querySelector("#rabbit").style.marginLeft=mLeft;
+            
+        });
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <style></style>
+</head>
+<body>
+    <h1>Game</h1>
+    <img id="bird" src="images/yellowbird.png">
+    <br>
+    <button id="attak">공격!</button>
+    <button id="shield">방어!</button>
+    
+    <script>
+        let mLeft = 0;
+        document.querySelector("#attak").addEventListener("click",function(){
+            mLeft += 100;
+            const bird = document.querySelector("img");
+            document.querySelector("#bird").style.marginLeft = mLeft+"px";
+        });
+        document.querySelector("#shield").addEventListener("click",function(){
+            
+        });
+    </script>
+    
+    
+</body>
+</html>

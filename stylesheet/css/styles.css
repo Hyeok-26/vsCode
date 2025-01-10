@@ -1,0 +1,93 @@
+/* css/styles.css */
+
+/*기본 스타일*/
+
+body{
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+/*부모만 바꿔도 자식도 함꼐 바뀐다*/
+header{
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding:20px 0; 
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-size: 1.2rem;
+}
+
+/*섹션 스타일*/
+section{
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 768px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+/*모든 소제목*/
+h2{
+    font-size: 1.5rem;
+    color:rgb(91, 131, 177);
+    border-bottom: solid #4caf50 ;
+    margin-bottom: 10px;
+}
+/*1번 줄*/
+#basic-selectors{
+    background-color: rgb(132, 230, 161);
+}
+
+#basic-selectors>p{
+    font-size: 18px;
+}
+
+.highlight{
+    background-color: #ffeb3b;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#special{
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+ul li{
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 5px ;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+ul li:nth-child(odd){
+    background-color: #d6caca;
+}
+
+ul li:nth-child(even){
+    background-color: #d1dfd2;
+}
+
+button:hover{
+    background-color: #4caf50;
+    color: wheat;
+}
+
+button:focus{
+    outline: 2px solid #ff5722;
+}
+
+span strong{
+    color: #1976d2;
+    text-decoration: underline;
+    cursor: pointer;
+}

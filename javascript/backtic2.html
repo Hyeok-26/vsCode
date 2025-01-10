@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backtic2.hmtl</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <div class="wrapper2"></div>
+    <div class="wrapper3"></div>
+    <script>
+        //innerText = 대입한 문자열 그대로 출력
+        document.querySelector(".wrapper").innerText = "<img src='images/kim1.png'>";
+        //innerHtml = html로 평가되어 해석이 된디(img요소가 만들어진다)
+        document.querySelector(".wrapper2").innerHTML = "<img src='images/kim1.png'>";
+        //요소에서 사용될 정보
+        let data="images/kim1.png";
+        document.querySelector(".wrapper3").innerHTML = `<img src ="${data}">`;    
+        
+        </script>
+</body>
+</html>

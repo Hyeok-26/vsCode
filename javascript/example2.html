@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example.html</title>
+    <style>
+        #rabbit{
+            transition: margin-left 0.5s ease-out;
+        }
+        #cat{
+            transition: margin-left 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="moveBtn">움직이기</button>
+    <button id="moveBtn2">움직이기2</button>
+    <button id="moveStp">다시 와</button>
+    <br>
+    <img id="rabbit" src="images/rabbit_1.png">
+    <br>
+    <img id="cat" src="images/run1.png">
+    <br>
+    <button id="runBtn">run!!</button>
+    <button id="runStp">Stop!!</button>
+
+    <script>
+        let mLeft = 0;
+        let count = 0;
+        const rabbitImg = document.querySelector("#rabbit")
+
+
+        //변경할 src를 배열에 미리 순서대로 준비
+        const images = ["images/rabbit_1.png","images/rabbit2.png"];
+        //출력할 인데스를 관리할 변수 만들고 0 초기화
+        let idx = 0;
+
+        document.querySelector("#moveBtn2").addEventListener("click",function(){
+            mLeft += 100;
+            rabbitImg.style.marginLeft = mLeft+"px";
+            //인덱스를 1등가시키고
+            idx++;
+            //만일 존재하지 않는 인덱스라면
+            if(idx ==2){
+                //0으로 초기화
+                idx = 0;
+            }
+            rabbitImg.setAttribute ("src",images[idx]);
+        });
+
+
+        const move=document.querySelector("#moveBtn").addEventListener("click",function(){
+            mLeft+=100;
+            count++;
+            let move = mLeft+"px";
+            rabbitImg.style.marginLeft=move;
+            if(count%2==1){
+                rabbitImg.setAttribute("src","images/rabbit2.png");
+            }else{
+                rabbitImg.setAttribute("src","images/rabbit_1.png");
+            }
+        });
+        const reset=document.querySelector("#moveStp").addEventListener("click",function(){
+            mLeft = 0;
+            count =0;
+            rabbitImg.setAttribute("src","images/rabbit_1.png");
+            rabbitImg.style.marginLeft=mLeft+"px";    
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        let running = 0;
+        let cats = [
+                "images/run1.png",
+                "images/run2.png",
+                "images/run3.png"
+            ];
+        let cnt = 0;
+        const moveCat =document.querySelector("#runBtn").addEventListener("click",function(){
+            running+=50;
+            let run = document.querySelector("#cat").style.marginLeft = running+"px";
+            cnt++;
+            
+        });
+        const stopCat = document.querySelector("#runStp").addEventListener("click",function(){
+            running = 0;
+            document.querySelector("#runStp").addEventListener("click",function(){
+                document.querySelector("#cat").style.marginLeft = 0;
+            })
+        });
+
+    </script>
+</body>
+</html>

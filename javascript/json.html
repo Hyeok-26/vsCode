@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json.html</title>
+</head>
+<body>
+    <h1>json 문자열 사용해보기</h1>
+    <button id="printBtn">출력하기</button>
+    <h2>회원정보</h2>
+    <p>
+        번호 : <strong id="num"></strong>
+        이름 : <strong id="name"></strong>
+        주소 : <strong id="addr"></strong>
+
+    </p>
+    <h2>좋아하는 음식 목록</h2>
+    <p>
+        <ul>
+
+        </ul>
+    </p>
+    <script>
+        const json = `{"num":1, "name":"김구라", "addr":"노량진"}`;
+        const json2 = `["떡복기","라면","김밥"]`;
+
+        const person = JSON.parse(json);
+        const foods = JSON.parse(json2);
+        
+        document.querySelector("#printBtn").addEventListener("click",function(){
+            document.querySelector("#num").innerText = person.num;
+            document.querySelector("#name").innerText = person.name;
+            document.querySelector("#addr").innerText = person.addr;
+            
+            for (let i = 0; i  < foods.length; i++) {
+                //li요소 만들시
+                const li = document.createElement("li");
+                //i번째 저장된 문자열로 innerText 출력
+                li.innerText = foods[i];
+                //ul 에 li요소 추가
+                document.querySelector("ul").append(li); 
+                
+            };
+        });
+
+    </script>
+</body>
+</html>

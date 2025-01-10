@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backtic.html</title>
+</head>
+<body>
+    <h1>backtic 테스트</h1>
+    <script>
+        //string type은 backtic을 이용해 만들 수 있다.
+        let str = `abcde1234`;
+        //여러줄의 문자열 가능
+        let str2 = `
+        하나
+        두울
+        세엣
+        .
+        .
+        `;
+        //문자열 연결
+        let num =1;
+        let name = '김구라';
+        //연결 연산자 활용
+        let result = "번호: "+num+" 이름: "+name;
+        //backtic의 기능활용
+        let result2 = `번호: ${num} 이름: ${name}`;
+        console.log(result);
+        console.log(result2);
+    </script>
+</body>
+</html>

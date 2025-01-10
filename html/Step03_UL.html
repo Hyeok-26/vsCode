@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_ul.html</title>
+    <style>
+        .my-ul{
+            font-size: 50px;
+            list-style-type: none;
+            padding: 0 ;
+            margin: 0 auto;
+        }
+        /*.my-ul의 자식 중 li선택*/
+        /*자손은 띄어쓰기 활용*/
+        .my-ul > li{
+            display: inline-block;
+
+        }
+        .my-link{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .my-link li{
+            display: inline;
+            
+        
+        }
+        .my-link a{
+            text-decoration: none;
+            color: red;
+            
+        }
+        .my-link a:hover{
+            text-decoration: underline;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>순서 없는 목록(uncordered list)ul 요소</h1>
+
+    <h2>친구 목록입니다</h2>
+    <ul>
+        <li>왕</li>
+        <li>와와</li>
+        <li>와오앙왕</li>
+        <li>왕왕</li>
+        <li>왕왕왕</li>
+    </ul>
+    <h2>친구 목록입니다(ul 의 스타일 변경)</h2>
+    <ul class="my-ul">
+        <li>왕</li>
+        <li>와와</li>
+        <li>와오앙왕</li>
+        <li>왕왕</li>
+        <li>왕왕왕</li>
+        
+    </ul>
+    <h2>바로가기 목록입니다</h2>
+    <ul class="my-link">
+        <li><a href="http://daum.net">daum</a></li>
+        <li><a href="https://naver.com">naver</a></li>
+        <li><a href="https://gmarket.co.kr">gmarket</a></li>
+    </ul>
+    
+</body>
+</html>

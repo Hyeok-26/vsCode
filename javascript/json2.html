@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json2.html</title>
+    <style>
+        td{
+            max-width:500px;
+            white-space:nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <h1>json 문자열 활용</h1>
+    <button id="getBtn">글 받아오기</button>
+    <h2>글정보</h2>
+    <div class="wrapper">
+        <table border="1">
+            <colgroup>
+                <col width ="50">
+                <col width ="500">
+                <col width ="300">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>제목</th>
+                    <th>작성이</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+
+        let count = 1;
+
+        document.querySelector("#getBtn").addEventListener("click",function(){
+            fetch(`https://koreanjson.com/posts/${count}`)
+           //fetch("https://koreanjson.com/posts/"+count)
+            .then(function(res){
+                //응답된 형식이 json형식이면 res.return()을 리턴하고
+                //그 외의 형식이면 res.text()를 리턴
+                return res.json();
+            })
+            .then(function(data){
+                //위의 res.json() 를 리턴하면 data는 object형식
+                //위의 res.text() 를 리턴하면 data 는 문자열(string)
+                //data 는 글 하나의 정보를 가지고 있는 object이다.
+                console.log(data);
+
+                const tr =`
+                    <tr>
+                        <td>${data.id}</td>
+                        <td>${data.title}</td>
+                        <td>${data.createdAt}</td>
+                    </tr>    
+                `;
+                //tbody에 html 로 해석되게끔 넣어준다
+                document.querySelector("tbody").insertAdjacentHTML("beforeend",tr);
+                count++;
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>

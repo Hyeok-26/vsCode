@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_example2.html</title>
+    <style>
+        button{
+            margin:0 30px;
+            padding: 10px 20px;
+            cursor:grab;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="saveMessage()">메세지 저장</button>
+    <button onclick="deleteMsg()">메세지 삭제</button>
+    <ul id="messageList"></ul>
+    <script>
+        //입력한 문자열을 누적시킬 빈 배열을 페이지 로딩 시점에 준비하기
+        let msgs = [];
+
+        function saveMessage(){
+            //prompt 함수를 이용해서 문자열 한줄을 입력 받고
+            const msg = prompt();
+            //입력받은 문자열을 msgs 배열에 저장해오세요
+            msgs.push(msg);
+        }
+
+        function deleteMsg(){
+            //배열에 저장된 값 삭제하기
+            const e1 = confirm("정말로 삭제하시겠습니까?");
+            if (e1) {
+                msgs.pop();
+                console.log("삭제 성공");
+                   
+            } else {
+                console.log("삭제 취소");
+            }
+            
+        }
+    </script>
+</body>
+</html>

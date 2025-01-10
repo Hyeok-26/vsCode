@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document2.html</title>
+</head>
+<body>
+    <p>김구라</p>
+    <p>해골</p>
+    <p>원숭이</p>
+    <p>주뎅이</p>
+    <p>덩어리</p>
+    <script>   
+        let names = [];      
+    /*    
+        //배열 안에 들어있는 이름을 위의p요소의 innerText로 순서대로 넣어보세요
+        for(let i=0; i<5; i++){
+            const friends=document.querySelectorAll("p")[i].innerText;
+            names.push(friends);
+        }
+    */  //모든 p요소의 참조값을 배열에 담아오기
+        const ps = document.querySelectorAll("p");
+
+        for (let i = 0; i < ps.length; i++) {
+            const name = ps[i].innerText;
+            ps[i].style.color ="pink";
+            //names 배열에 누적시키기
+            names.push(name);
+            
+        }
+    
+
+    </script>
+</body>
+</html>

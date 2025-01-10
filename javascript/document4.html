@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document4.html</title>
+</head>
+<body>
+    <button id="add">토끼 추가</button>
+    <button id="reset">리셋</button>
+    <div class="container">
+        <img src="images/rabbit_1.png">
+    </div>
+    <script>
+        document.querySelector("#add").addEventListener("click",function(){
+            //img 요소 만들기
+            const img = document.createElement("img");
+            //img요소에 속성 부여
+            img.setAttribute("src","images/rabbit_1.png")
+            //.container에 img요소 추가
+            document.querySelector(".container").append(img);    
+        });
+        document.querySelector("#reset").addEventListener("click",function(){
+            //div 요소에 img만 있으니 빈 문자열로 덮어쓰기
+            document.querySelector(".container").innerText="";
+        });
+
+    </script>
+</body>
+</html>

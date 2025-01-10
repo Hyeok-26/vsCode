@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while1.html</title>
+</head>
+<body>
+    <script>
+        let i = 0;
+        while (i<10) {
+            i++;
+            console.log(i);     
+        };
+        let count = 0;
+        while(true){
+            console.log("무언가를 작업합니다!");
+            count++;
+            //특정 조건에서 무한루프를 탈출하도록 한다
+            if(count ==5){
+                //빠져나오기
+                break;
+            }
+        };
+    </script>
+</body>
+</html>

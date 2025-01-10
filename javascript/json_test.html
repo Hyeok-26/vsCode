@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json_test.html</title>
+</head>
+<body>
+    <h1>JSON으로 프로가 되는 길</h1>
+    <button id="userBtn">유저 받아오기</button>
+    <button id="reset">목록 삭제</button>
+    <h2>유저 목록</h2>
+    <div class="container">
+        <table border="1">
+            <colgroup>
+                <col width="100">
+                <col width="100">
+                <col width="200">
+                <col width="200">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>유저명</th>
+                    <th>사는 곳</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let cnt =1;
+        document.querySelector("#userBtn").addEventListener("click",function(){
+            fetch(`https://koreanjson.com/users/${cnt}`)
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(data){
+                console.log(data);
+
+                const list=`
+                        <td>${data.id}</td>
+                        <td>${data.name}</td>
+                        <td>${data.username}</td>
+                        <td>${data.city}</td>   
+                `;
+                document.querySelector("table").insertAdjacentHTML("beforeend",list);
+                
+                cnt++;
+            })
+            
+        });
+
+        document.querySelector("#reset").addEventListener("click",function(){
+            fetch(`https://koreanjson.com/users/${cnt}`)
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(data){
+                console.log(data);
+
+                const list=`
+                        <td>${data.id}</td>
+                        <td>${data.name}</td>
+                        <td>${data.username}</td>
+                        <td>${data.city}</td>   
+                `;
+                document.querySelector("tbody").innerText="";
+                
+                cnt = 1;
+            })
+            
+        });
+    </script>
+</body>
+</html>

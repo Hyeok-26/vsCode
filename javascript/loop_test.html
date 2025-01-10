@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop_test.html</title>
+</head>
+<body>
+    <input type="text" id="content">
+    <button onclick="add()">추가</button>
+    <button id="saveBtn">저장2</button>
+    <script>
+        (function(){
+            let msgs = [];
+            document.querySelector("#saveBtn").addEventListener("click",function(){
+                const msg = document.querySelector("#content").value            
+                msgs.push(msg);
+            });
+        })();
+        
+        //빈 배열을 만들고 배열에 숫자 0~ 9를 순서대로 저장해봇시오
+          let empty = [];
+          for (let i = 0; i < 10; i++) {
+            //empty.push(i);
+            //i번째 인덱스에 i저장
+            empty[i]=i;
+            
+          }
+        
+        //빈 배열을 만들고 배열에 숫자 1 ~ 10를 순서대로 작성해봇시오
+          let empty2 = [];
+          for(let i = 0; i < 10; i++){
+            empty2.push(i+1);
+          }
+       
+        //빈 배열을 만들고 배열에 숫자 1 ~ 100를 순서대로 작성해봇시오
+          let empty3 = [];
+          for (let i = 0; i < 100; i++) {
+            empty3.push(i+1);       
+          }
+       
+        /*빈 배열을 만들고 배열에 숫자 0~ 9를 순서대로 저장한 다음
+          모든 숫자의 합을 콘솔창에 띄우시오*/
+          let empty4=[];
+          let result = 0;
+          for (let i = 0; i < 100; i++){
+            let num4 = empty4.push(i+1);
+            result += num4;
+          }
+          console.log(result);
+       
+        /*input 요소와 button을 배치하고
+          input 요소에 문자열을 입력하고 button을 누르면
+          입력한 문자열이 빈 배열에 계속 누적되도록 프로그래밍 하세용*/
+          let empty5 = [];
+          function add(){
+            const plus = document.querySelector("#content").value            
+            empty5.push(plus);
+         }
+
+    </script>
+</body>
+</html>

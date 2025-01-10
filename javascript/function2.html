@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function2.html</title>
+</head>
+<body>
+    <p id="result">p1</p>
+    <script>
+
+        //매개변수 msg에 전달받은 내용을 p요소에 출력하는 함수
+        function printMsg(msg){
+            document.querySelector("#result").innerText = msg;
+        }
+        function printAvg(num1, num2){
+            let avg = (num1 + num2)/2;
+            document.querySelector("#result").innerText = num1+" 과 "+num2+" 의 평균 "+avg;
+        }
+        function useFun(msg,f){
+            console.log(msg);
+            f();
+        }
+        useFun("click",function(){
+            console.log("호출된");
+        }); 
+
+        useFun("xxx","yyy");
+    </script>
+</body>
+</html>

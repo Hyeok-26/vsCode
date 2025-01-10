@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_table.html</title>
+    <style>
+        .container{
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        table{
+            border-collapse: collapse ;/*테두리 겹침 제거*/
+            width:100%;                /*너비의 폭*/
+            border-radius: 8px;   /*테두리 둥글게*/
+            overflow: hidden;  /*넘치는걸 숨기다*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/*그림자*/
+        }
+        th{
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+           
+        }
+        td{
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd; /*경계선  */
+            text-align: center;
+            
+        }
+        /*테이블 행 홀수번째. 짝수번째*/
+        tr:nth-child(odd){
+            background-color: aqua;
+            
+        }
+        tr:nth-child(even){
+            background-color: aquamarine;
+            
+        }
+        tr:hover {
+            background-color: #c9d6c9;
+            transform: scale(1.05);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>표(table) 형식으로 정보를 출력하기</h1>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>김구라</td>
+                <td>노량진</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>해골</td>
+                <td>행신동</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>원숭이</td>
+                <td>동물원</td>
+            </tr>
+            
+        </table>
+    </div>
+</body>
+</html>

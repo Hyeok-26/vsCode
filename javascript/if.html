@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if.html</title>
+    
+</head>
+<body>
+    <h1>if 문 사용해보기</h1>
+    <button onclick="check()">짝수 확인하기</button>
+    <button onclick="check2()">홀짝 확인하기</button>
+    <button onclick="check3()">홀짝 확인하기2</button>
+    <button onclick="check4()">홀짝 확인하기3</button>
+    <script>
+        function check(){
+            const num = prompt()
+            if(num%2 == 0){
+                console.log("짝수입니다");
+            }
+        }    
+        function check2(){
+            const num = prompt()
+            if(num%2 == 0){
+                console.log("짝수입니다");
+            }
+            else
+            {
+                console.log("홀수입니다");
+            }
+        }
+        function check3(){
+            const num = prompt()
+            if(num%2 == 0){
+                console.log("짝수입니다");
+            }
+            if(num%2==1){     
+                console.log("홀수입니다");
+            }
+        }
+        function check4(){
+            let num = prompt()
+            let result = (num%2 == 0)?"짝수":"홀수";
+            console.log(result);
+        }
+
+        let isFirst = confirm("처음 방문이면 확인을 누르세요!");
+        if(isFirst){
+            console.log("반갑습니다.처음 뵙겠습니다");
+        }
+        console.log("입장 햇습니다");
+    </script>
+</body>
+</html>
