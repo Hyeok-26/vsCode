@@ -14,8 +14,8 @@
         <table border="1">
             <colgroup>
                 <col width="100">
+                <col width="150">
                 <col width="100">
-                <col width="200">
                 <col width="200">
             </colgroup>
             <thead>
@@ -23,7 +23,7 @@
                     <th>아이디</th>
                     <th>이름</th>
                     <th>유저명</th>
-                    <th>사는 곳</th>
+                    <th>이메일</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
     <script>
         let cnt =1;
         document.querySelector("#userBtn").addEventListener("click",function(){
-            fetch(`https://koreanjson.com/users/${cnt}`)
+            fetch(`https://jsonplaceholder.typicode.com/users/${cnt}`)
             .then(function(res){
                 return res.json();
             })
@@ -45,17 +45,19 @@
                         <td>${data.id}</td>
                         <td>${data.name}</td>
                         <td>${data.username}</td>
-                        <td>${data.city}</td>   
+                        <td>${data.email}</td>   
                 `;
-                document.querySelector("table").insertAdjacentHTML("beforeend",list);
-                
+                document.querySelector("tbody").insertAdjacentHTML("beforeend",list);
                 cnt++;
+                if(cnt==10){
+                    cnt=1;
+                }
             })
             
         });
 
         document.querySelector("#reset").addEventListener("click",function(){
-            fetch(`https://koreanjson.com/users/${cnt}`)
+            fetch(`https://jsonplaceholder.typicode.com/users/${cnt}`)
             .then(function(res){
                 return res.json();
             })
@@ -65,8 +67,8 @@
                 const list=`
                         <td>${data.id}</td>
                         <td>${data.name}</td>
-                        <td>${data.username}</td>
-                        <td>${data.city}</td>   
+                        <td>${data.username}</td>s
+                        <td>${data.email}</td>   
                 `;
                 document.querySelector("tbody").innerText="";
                 
