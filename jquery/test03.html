@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg">
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+
+
+    </ul>
+    <!-- jquery 로딩딩-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js""></script>
+    <script>
+        $("#addBtn").on("click",()=>{
+            const a = $("#inputMsg").val();
+            const li = $("<li>").text(a);
+            $("#msgList").append(li);
+        });
+
+    </script>
+</body>
+</html>

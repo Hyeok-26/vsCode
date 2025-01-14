@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+    <style>
+        .wrapper{
+            display: flex;
+        }
+        .box{
+           width: 100px;
+           height: 100px;
+           background-color: yellow;
+           border: 1px solid red; 
+           cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="box">div1</div>
+        <div class="box">div2</div>
+        <div class="box">div3</div>
+        <div class="box">div4</div>
+        <div class="box">div5</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        /*
+            $(".box").on("click",()=>{
+                $(event.target).text("clicked").css("backgroundColor","green");
+            });
+        */
+
+            
+        /*
+            document.querySelectorAll(".box").forEach(box=>{
+                box.addEventListener("click",()=>{
+                    box.innerText="clicked!";
+                });
+            });
+        */
+        /*
+                //클래스명이 box 인 모든 요소의 참조값을 배열에 담긴 채로 얻어내기
+            const boxs =document.querySelectorAll(".box");
+            for(let i=0; i<boxs.length; i++){
+                boxs[i].addEventListener("click",(event)=>{
+                    //이벤트가 발생한 바로 그 요소의 innertext 만 변경
+                    event.target.innerText="clicked";
+                    //배경색도 변경
+                    event.target.style.backgroundColor="green";
+                });
+            };
+        */    
+    </script>
+</body>
+</html>
