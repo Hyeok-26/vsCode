@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03.html</title>
+</head>
+<body>
+    <script>
+        const source = "kimgura is kimgura or leegura is leegura";
+        const reg1=/gura/g;
+        const reg2=/...gura/g;
+        //const result = reg1.test(source)
+        //위의 정규표현식 객체를 new 를 이용해서 만들려면 아래와 같다다
+        const reg1_2 = RegExp("gura","g");
+        const reg2_2 = RegExp("...gura","g");
+        //source 문자열로부터 reg1 에 매칭되는 모든 문자열을 찾아서 콘솔창에 순서대로 출력
+        while (true) {
+            const match = reg1.exec(source);
+            if(match==null) break;
+            console.log(match[0]);
+            console.log(match.index);
+        }
+        //source 문자열로부터 reg2 에 매칭되는 모든 문자열을 찾아 콘솔창에 띄우기
+        while(true){
+            const match2 = reg2.exec(source);
+            if(match2==null)break;
+            console.log(match2[0]);
+            console.log(match2.index);
+        }
+    </script>
+</body>
+</html>

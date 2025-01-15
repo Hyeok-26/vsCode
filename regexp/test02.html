@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02.html</title>
+</head>
+<body>
+    <script>
+        /*
+            점은 아무거나 한글자를 의미한다.
+        */
+        const source = "Sunday";
+        const source2 = "Monday";
+        const source3 = "Tuesday";
+        //아무거나 3글자가 있는지 여부를 판별할 수 있다
+        const reg1 = /.../;
+        const result1 = reg1.test(source);
+        
+        const reg2 = /...day/;
+        const result2 = reg2.test(source);
+        const result2_2 = reg2.test(source2);
+        const result2_3 = reg2.test(source3);//아무거나 3글자만 있으면 되니까 true
+
+        const reg3 = /^...day$/;
+        const result3 = reg3.test(source);
+        const result3_2 = reg3.test(source2);
+        const result3_3 = reg3.test(source3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test04.html</title>
+</head>
+<body>
+    <ul>
+
+
+    </ul>
+    <script>
+        const source = "kimgura is kimgura or leegura is leegura"
+        //위의 문자열에서 단어만 추출해서 ul 에 출력해보세요
+        //hint => []
+        const reg = /[^ ]+/g;
+    
+        while (true) {
+            const match = reg.exec(source);
+            if(match==null)break;
+            //새로운 li 요소 만든 다음
+            const li = document.createElement("li");
+            li.innerText = match[0];
+            //ul의 자식요소로 출력력
+            document.querySelector("ul").append(li);
+        }
+       
+
+
+    </script>
+</body>
+</html>
