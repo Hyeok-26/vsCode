@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test07.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="showBtn">보이기</button>
+    <button id="hideBtn">숨기기</button>
+    <button id="toggleBtn">토글</button>
+    <div class="box" id="myBox"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $("#showBtn").click(()=>{
+            $("#myBox").show(1000);
+        });
+        $("#hideBtn").click(()=>{
+            $("#myBox").hide(1000,()=>{
+                alert("뿅!");
+            });
+        });
+        $("#toggleBtn").click(()=>{
+            $("#myBox").toggle({
+                // 값에 1000을 전달했을 때랑 똑같은 동작(가독성 면에서 좋다)
+                duration:1000, //string 도 속도관련
+                //function type
+                complete:()=>{ 
+                    alert("toggled!");
+                } 
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plugin_datetime.html</title>
+    <!--플러그인 css로딩딩-->
+    <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+</head>
+<body>
+    <h3>날짜 시간 선택</h3>
+    <input id="one" type="text">
+    
+    <h3> 날짜 선택</h3>
+    <input type="text" id="two">
+
+    <h3> 시간 선택</h3>
+    <input type="text" id="three">
+
+    
+    <!--jquery 로딩-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!--플러그인 javascript 로딩-->
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+    <script>
+        //언어
+        $.datetimepicker.setLocale("ko");
+
+        $("#one").datetimepicker();//{key:value} 동작이 바뀐다
+        $("#two").datetimepicker({
+            timepicker : false, //timepicker 는 안보이게
+            format:"Y-m-d" //날짜 형식 지정정
+        });
+        $("#three").datetimepicker({
+            datepicker : false,  //날짜는 안보이게
+            format:"H.i"  //시간 형식 지정
+        });
+    </script>
+</body>
+</html>
