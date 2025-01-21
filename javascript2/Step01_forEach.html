@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_forEach.html</title>
+</head>
+<body>
+    <h1>친구 목록</h1>
+    <ul id="list">
+
+
+    </ul>
+    <script>
+        const names = ["김구라","해골","원숭이"];
+        names.forEach((item, index)=>{
+            document.querySelector("#list").insertAdjacentHTML("beforeend",`<li>${item} ${index}</li>`);
+        });
+
+    </script>
+</body>
+</html>
