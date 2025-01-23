@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function.html</title>
+</head>
+<body>
+    <script>
+        function showInfo(num=0, name="이름", addr="주소") {
+            console.log(`num:${num} name:${name} addr:${addr}`);
+        }
+        //함수 호출하면서 매개변수에 순서대로 값 전달하기
+        showInfo(1, "kim", "seoul");
+        showInfo();
+        showInfo(2);
+        showInfo(3, "monkey");
+
+        //rest parameter
+        function printMsg(...args){
+            //args 는 매개변수에 전달된 값들이 들어잇는 배열이다
+            console.log(args);
+        }
+        printMsg();
+        printMsg("hi");
+        printMsg("hi", "bye", "hello");
+    </script>
+</body>
+</html>

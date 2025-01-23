@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //javascript 에도 class 개념이 있다.
+        class Car{
+            //class 메소드드
+            drive(){
+                console.log("달려요");
+            }
+        }
+        //Car 클래스로 객체를 생성해서
+        let c1 = new Car();
+        //class 메소드 호출하기
+        c1.drive();
+
+        class Person{
+            //static 메소드드
+            static showInfo(){
+                console.log("사람 입니다");
+            }
+            sing(){
+                console.log("노래를 합니다");
+            }
+        }
+        //class 메소드는 객체를 생성해서 참조값으로 호출
+        new Person().sing();
+        //static 메소드는 클래스명에 . 찍어서 호출
+        Person.showInfo();
+
+        class Phone{
+            //생성자
+            constructor(name){
+                console.log("Phone 생성자 호출");
+                this.name=name;
+            }
+
+            call(){
+                console.log(this.name+" 전화를 걸어요!!");
+            }
+        }
+
+        const p1 =new Phone("iphone");
+        const p2 =new Phone("android");
+
+        p1.call();
+        p2.call();
+    </script>
+</body>
+</html>

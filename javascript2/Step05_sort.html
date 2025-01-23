@@ -9,9 +9,33 @@
     <script>
         const nums=[20, 30, 10, 1, 2];
         //오름차순 정렬렬
-        const result1 = nums.sort((one, two)=>one-two);
+        //const result1 = nums.sort((one, two)=>one-two);
         //내림차순 정렬
-        const result2 = nums.sort((one, two)=>two-one);
+        //const result2 = nums.sort((one, two)=>two-one);
+
+        const phones = [
+            { name: "iPhone 14", price: 999 },
+            { name: "Samsung Galaxy S23", price: 899 },
+            { name: "Google Pixel 8", price: 799 },
+            { name: "OnePlus 11", price: 729 },
+            { name: "Xiaomi Mi 13", price: 599 },
+            { name: "Sony Xperia 1 V", price: 1199 },
+            { name: "Huawei P60 Pro", price: 899 },
+            { name: "Asus ROG Phone 7", price: 999 },
+            { name: "Oppo Find X6 Pro", price: 849 },
+            { name: "Motorola Edge 40", price: 699 },
+        ];
+        //one 에는 각각의 오브젝트가 전달된다다
+        //const result3 = phones.sort((one, two)=>one.price-two.price);
+
+        //모든 경우의 수를 비교해서 정렬시킨다
+        //첫번쨰 전달자에 두번쨰 전달자를 뺴면 오름차순,반대면 내림차순
+        phones.sort((one, two)=>{
+            console.log(one);
+            console.log(two);
+            console.log("---------");
+            return one.price - two.price;
+        });
     </script>
 </body>
 </html>
