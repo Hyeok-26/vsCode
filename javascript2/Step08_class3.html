@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class3.html</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this._name = name;
+            }
+
+            get name(){
+                return this._name+"님";
+            }
+        }
+
+        const p1 = new Person("김구라");
+        console.log(p1.name);//"김구라님"
+
+        class Rect{
+            constructor(width, height){
+                this.width =width;
+                this.height = height;
+            }
+
+            get area(){
+                //area 값을 가져갈 때 리턴 값을 함께 가져간다.
+                return this.width*this.height;
+            }
+        }
+
+        const r1 = new Rect(10, 20);
+        console.log(`면적은: ${r1.area} 입니다`)
+
+        class Phone{
+
+            set name(value){
+                this._name=value+"폰";
+            }
+
+            get name(){
+                return this._name;
+            }
+        }
+        const phone1 = new Phone();
+        phone1.name="android";
+        console.log(phone1.name);
+
+    </script>
+</body>
+</html>
