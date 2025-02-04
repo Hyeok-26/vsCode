@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <button onclick="test()">눌러보셈</button>
+    <script>
+        function test(){
+            //Promise 객체 생성(생성자 함수 안에서 약속에 관련되 작업)
+            const p1 = new Promise((resolve, reject)=>{
+                //함수의 매개 변수에 두가지 함수가 전달된다
+                //resolve() 는 작업이 선공되었을때 호출하는 함수이고, 
+                // reject() 는 실패 했을때 호출하는 함수이다
+                let isSuccess=true;
+                
+                //테스트를 위해 약속 해결 시간을 지연 시키기
+                setTimeout(()=>{
+                    if(isSuccess){
+                        resolve("작업성공!");
+                    }else{
+                        reject("작업실패 ㅠㅠ");
+                    }
+                },3000);
+            });
+
+            //Promise 가 이행이된다면 then()안에 있는 함수가 호출되거
+            p1.then(result=>{
+                //result 매개 변수에 결과 데이터가 담겨있는 구조이다.
+                console.log(result);
+            })
+            .catch(err=>{   //Promise 가 reject 되면 catch() 안에 있는 함수가 호출된다
+                console.log(err);
+            })
+            .finally(()=>{
+                //약속이행, 실패여부와 상관없이 호출
+                console.log("작업이 완료되었습니다");
+            });
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise2</title>
+</head>
+<body>
+    <button onclick="test()">눌러보셈</button>
+    <script>
+        function test(){ 
+            const p1 = new Promise((resolve, reject)=>{
+                resolve("작업성공");
+            });
+            //Promise 가 이행이된다면 then()안에 있는 함수가 호출되거
+            p1.then(result=>{
+                //result 매개 변수에 결과 데이터가 담겨있는 구조이다.
+                console.log(result);
+
+                return new Promise((resolve,reject)=>{
+                    //바로 해결하기
+                    resolve("2 번째 작업 성공");
+                });
+            })
+            .then((result)=>{
+                console.log(result);
+            })
+            .catch(err=>{   //Promise 가 reject 되면 catch() 안에 있는 함수가 호출된다
+                console.log(err);
+            })
+            .finally(()=>{
+                //약속이행, 실패여부와 상관없이 호출
+                console.log("작업이 완료되었습니다");
+            });
+            
+        }
+
+    </script>
+</body>
+</html>

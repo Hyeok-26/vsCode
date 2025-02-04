@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="doIt()">작업 시작</button>
+    <script>
+        async function doIt(){
+            console.log("작업을 시작했습니다");
+            /*
+                await 는 Promise 가 해결될 때까지 기다린다(스레드가 blocking 되는 것은 아니다)
+            */
+           try{
+                const res = await fetch("http://localhost:8888/Step07Final/ajax/member.jsp");
+
+                //res.ok 에는 정상적인 응답이 왔는지 여부가 true or false 로 들어있다
+                if(!res.ok){
+                    //400번대 혹은 500번대 에러 응답인 경우 여기가 실행된다.
+                    throw new Error(`Http 에러! 상태코드:${res.status}`);
+                }
+
+                const data = await res.json();
+
+                console.log(data);
+           }catch(err){
+                console.log(err);
+           }finally{
+                console.log("작업 완료")
+           }
+           console.log("doIt 함수가 리턴됩니다");
+        }
+
+        //다양한 모양으로 만들 수 있다
+        async function a(){
+
+        }
+        const b = async function(){};
+        const c = async ()=>{};
+
+    </script>
+</body>
+</html>
