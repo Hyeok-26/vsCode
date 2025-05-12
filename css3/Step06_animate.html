@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이트 css 사용</title>
+    <!-- animate css 로딩하기-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <h1 class="animate__animated animate__fadeInDownBig">Animate Css</h1>
+    <p class="animate__animated animate__zoomIn">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos eos eius perspiciatis similique neque consectetur voluptatem earum eaque magni corporis a hic mollitia atque officiis perferendis, nulla sint cumque repudiandae?</p>
+    <p>기본 동작은 페이지 로딩 시점에 1번 1초동안 동작한다</p>
+    <button id="bounce">animate__bounce</button>
+    <button id="myBtn" class="animate__animated">동작 시점 변경</button>
+    <h1 class="animate__animated animate__bounce animate__infinite">무한 반복</h1>
+    <script>
+        document.querySelector("h1").classList.remove("animate__fadeInDownBig");
+        document.querySelector("#bounce").addEventListener("click",(e)=>{
+            document.querySelector("h1").classList.add("animate__fadeInDownBig");
+            document.querySelector("h1").addEventListener("animationend",(e)=>{
+                e.target.classList.remove("animate__fadeInDownBig");
+            });
+        });
+        document.querySelector("#myBtn").addEventListener("click",(e)=>{
+            //animation 에 관련된 클래스 추가하기
+            e.target.classList.add("animate__rubberBand");
+            // animation 이 끝났을 때 실행할 함수 등록
+            //animation 이 다 진행되면 animationend 가 실행
+            e.target.addEventListener("animationend",(e)=>{
+                e.target.classList.remove("animate__rubberBand");
+            });
+        });
+
+    </script>
+</body>
+</html>

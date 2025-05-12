@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- toast editor 를 사용하기 위한 css,javascript 로딩-->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <style>
+        .container{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Toast Ui Editor 사용하기</h1>
+        <div id="editor"></div>
+
+    </div>
+    <script>
+        //Editor 클래스 얻어내기기
+        const Editor = toastui.Editor;
+        //Editor 객체 생성하면서 option 전달하기기
+        const editor = new Editor({
+        el: document.querySelector('#editor'), //어디에 Editor 를 만들 것인지지
+        height: '500px',    //높이이
+        initialEditType: 'wysiwyg', //markdown | wysiwyg  Editor type 설정정
+        previewStyle: 'vertical' //미리보기 설정 vertical | tab
+        });
+    </script>
+</body>
+</html>
